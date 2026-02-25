@@ -1,0 +1,441 @@
+Overview
+This post outlines a number of development recommendations that as a group represent a major update to the High Seas expansion of Ultima Online. This update will expand on the ships/pirates/bounty system, tie into the existing trade runs and city mayor system, and revitalize a number of currently irrelevant skills. This update will impact several popular areas of UO activity, including crafting, rares collecting, treasure hunting, thievery, and taming. While lengthy, I ask that you read the entire document prior to commenting.
+Story Outline
+This update will be divided into three arcs in order that pieces of development can be introduced in smaller segments which will provide UO's limited developer resources time to fine tune code changes.
+In the first part (approximately 5 - 6 weeks), Event Moderator events on each shard would focus on sea monster / pirate band / smuggling operations tailored to suit each EM's current storyline on that shard (if any). The unifying theme required in each of these is the development of a story background revolving around strange magical whirlpools in the oceans of each facet (Trammel, Felucca, Tokuno, and Lost Lands). These whirlpools have spawned from some other world's oceans and are the source of sea monster / pirate band activity new to the UO world. This segment is intended to create interest in High Seas content, introduce the storyline, and support the rares collecting community by involving at least one EM item drop event on all shards.  While this first part is live, the bulk of the update changes will be on Test Center for developer feedback. During this arc, large magical whirlpools (uses the water titan graphic) spawn in the oceans that spawn Strange Sea Monsters, Abyssal Kraken, Eldritch Leviathans . They must be 'defeated' for the magical whirlpool to be closed. Dread pirates spawn rates are increased in the area of magical whirlpools.
+In the second part (approximately 5 - 6 weeks), while magical whirlpools have been dissipated, they spawned enough pirate forces that the pirates have banded together to form the Black Armada. This part of the arc will be similar in nature to previous "Treasures of Tokuno / Doomed / Kotl" events in that players will receive unique item drops as they battle the Black Armada, and these item drops will be turned in to an NPC for special rewards. The Black Armada will randomly appear outside port cities (reasonably close to each city's dock). It will contain between 12 and 20 special Dread Pirate NPC ships.  As the crews of these ships are defeated, a Black Armada Flagship will spawn as a boss battle fighting for the town. 
+The third part of the story arc will sever the connection between each world's oceans. This represents the permanent changes from this event. The Black Armada fleets will cease attacking towns and take up residence in Buc's Den Felucca. Here the remnants of the fleet will occasionally sortie out as random, single-ship encounters for High Seas battles in Feluccan waters. In Buc's Den Felucca the Black Armada will also support stealing and smuggling activities.
+BEGIN FIRST ARC SECTION (SKILLS AFFECTED = BEGGING, SNOOPING, STEALING, FORENSICS, ITEM ID, BLACKSMITHING, ARMS LORE, TAILORING, DETECT HIDDEN, ANIMAL TAMING, CARTOGRAPHY, LOCKPICKING)
+First Arc Details = Game Design and Skill Changes
+New NPC Added, Named One of the Following: Suspicious Sailor, Swarthy Deckhand, Aloof Seaman
+NPC Location: Docks and Taverns in all port towns
+NPC Behaviour: These NPCs represent the first castaways / survivors of ships from magical whirlpools. They are dressed in various sailing / pirate attire. These NPCs can be interacted with in one of three ways:
+First Interaction -> Skill Check = Begging [Requires High Seas Expansion], if a player has GM Begging and uses it on one of these NPCs, they will recieve a salty sea-themed insult, but,
+40% of the time no other action happens,
+40% of the time the NPC will "stab" the player and the Trick or Treat bleeding graphic occurs, with a 50 point direct damage hit point loss to player, NPC will then "flee" (disappear),
+20% of the time the NPC will accidentally drop one of the following items:
+1. (50% chance) Between 500 - 2000 "Unfamiliar Pieces of Eight", uses the same graphic as gold coins but in a different hue / color. These can be turned in to the Questionable Dealer NPC (detailed below) for special items.
+2. (25% chance) Special Fishing Bait from the existing list of High Seas
+3. (20% chance) 5 Special Fish Steaks from the existing possibilities in High Seas used to make the special Fish Pies
+4. (3% chance) Special Ship Paint, similar to existing ship paint graphic, but comes in a variety of special hues.
+5. (2% chance) A Ship's Lantern, has Spell Channeling, uses current lantern graphic but comes in a variety of special hues.
+
+ 
+Second Interaction -> Skill Check = Snooping [Requires High Seas Expansion], a player with GM Snooping can use the skill on one of these NPCs.
+50% of the time the player will be discovered and the NPC will "stab" the player and the Trick or Treat bleeding graphic occurs, with a 50 point direct damage hit point loss to player, NPC will then "flee" (disappear),
+50% of the time the player will receive the message, "You notice an interesting package hanging loose in their coat pocket." If the player receives this message, they can attempt to steal from the NPC (only if this message has appeared first) with the following possibilities as a result:
+1. (50% chance) Between 500 - 2000 "Unfamiliar Pieces of Eight", uses the same graphic as gold coins but in a different hue / color. These can be turned into the Questionable Dealer NPC (detailed below) for special items.
+2. (25% chance) Special Fishing Bait from the existing list of High Seas
+3. (20% chance) A Skeleton Key.
+4. (3% chance) A "Strange Schematic for a Cannon Improvement" crafting recipe. (detailed below)
+5. (2% chance) A Master Skeleton Key (one use)
+Third Interaction -> Skill Check = Forensics [Requires High Seas Expansion], a player with GM Forensics can use the skill on one of these NPCs.
+50% of the time the player will be discovered and the NPC will "stab" the player and the Trick or Treat bleeding graphic occurs, with a 50 point direct damage hit point loss to player, NPC will then "flee" (disappear),
+50% of the time the player will receive the message, "This person is a stranger to this land. Noticing your sudden interest, he flees, but drops a package while doing so!" If the player receives this message, they get a pack drop with the following possibilities as a result:
+1. (50% chance) Between 500 - 2000 "Unfamiliar Pieces of Eight", uses the same graphic as gold coins but in a different hue / color. These can be turned into the Questionable Dealer NPC (detailed below) for special items.
+
+ 2. (25% chance) Special Fishing Bait from the existing list of High Seas
+3. (20% chance) A piece of cloth with a special hue (sea greens and blues, similar to slime dyes but new colors)
+4. (3% chance) A "Pattern for a Hooded Robe" crafting recipe. Allows tailors to craft hooded robes (ties in to the special cloth above)
+5. (2% chance)  A rare piece of cloth with hues randomly taken from current and previous turn-in and reward dyes (Compassion dyes, slime dyes, community cleanup dyes)
+New NPC Added, Named: Questionable Dealer
+NPC Location: Buc's Den Tavern
+NPC Behaviour: Similar to the First New NPCs, these characters represent the first castaways / survivors of ships from magical whirlpools. They are also dressed in various sailing / pirate attire.
+Dropping "Unfamiliar Pieces of Eight" onto one of these characters will bring up a dialog menu that shows the total number of "Unfamiliar Pieces of Eight" collected by Questionable Dealer for this account. (Similar to Blackthorn Dungeon)
+Players can spend their collected "Unfamiliar Pieces of Eight" on the following items:
+1. 5000 "Unfamiliar Pieces of Eight" = Random Special Fishing Bait from the existing list of High Seas baits
+2. 10,000 "Unfamiliar Pieces of Eight" = Counterfeit Bulk Order Deeds, random LBOD from all crafting skills, when turned-in it also resets the bribe amount to 0 and bribe count to 0.
+3. 15,000 "Unfamiliar Pieces of Eight" = A random Message in a Bottle
+4. 50,000 "Unfamiliar Pieces of Eight" = A bolt of cloth with a special hue (sea greens and blues, similar to slime dyes but new colors)
+5. 75,000 "Unfamiliar Pieces of Eight" = A Master Skeleton Key (one use)
+6. 100,000 "Unfamiliar Pieces of Eight" = A "Strange Schematic for a Cannon Improvement" crafting recipe. (detailed below)
+7. 100,000 "Unfamiliar Pieces of Eight" = "A Waterstained Portrait of {a random current online player of the shard}" This will be one of the existing SOS paintings, but unique to current player names and with new special hues.
+8. 125,000 "Unfamiliar Pieces of Eight" = A "Pattern for a Hooded Robe" crafting recipe. Allows tailors to craft hooded robes (ties in to the special cloth above)
+9. 250,000 "Unfamiliar Pieces of Eight" = A random Ship's Lantern, has Spell Channeling, uses current lantern graphic but comes in a variety of special hues.
+
+ 
+
+Additional Details
+ The "Strange Schematic for a Cannon Improvement" crafting recipe allows crafters who have the High Seas expansion to create an improved heavy cannon per the following:
+100% Succes chance with GM Arms Lore, GM Blacksmithing, and GM Carpentry (all three required)
+Materials Required: 3000 Colored Ingots (any color, Cannon retains the color of material used) and 500 boards
+Based on the ingots used, the Improved Cannon is functionally equivalent to a Heavy Cannon (and uses Heavy Cannon ammo) with the following bonuses:
+Dull Copper = 5% damage increase
+Shadow = 7% damage increase
+Copper = 10% damage increase
+Bronze = 12% damage increase
+Gold = 15% damage increase
+Agapite = 18% damage increase
+Verite = 20% damage increase
+Valorite = 25% damage increase
+
+Improved Cannons degrade at the same rate as a heavy cannon, but require the same material to repair them as that which was used to craft them (i.e. a Bronze Improved Cannon can only be repaired using Bronze ingots)
+The "Pattern for a Hooded Robe" crafting recipe allows tailors to craft hooded robes similar to existing ones in game. They retain the color of the material used to craft them. The tailor must have the High Seas expansion. Crafted robes cannot be imbued, and have no modifiers. Clothing Bless Deeds can be used on them.
+New NPC Added, Named One of the Following: Flotsam and Jetsam of a Wrecked Ship
+NPC Location: "Discovered" location along shoreline of ocean (Trammel, Felucca, Tokuno, Lost Lands)
+NPC Behaviour: This 'NPC' uses the same mechanic as the invasion trade run, namely, a player who has an active Trade Run from a town (any town offering them) has a chance of spawning a shipwreck (graphic appears like the burning wagons did, but using wreckage as the graphic). Brigands (named Salvagers) and Grubbers and Undead (named Souls of the Drowned), all with Paragon level stats for their types, spawn at the same time. Defeating the spawn can provide 500 to 1000 "Unfamiliar Pieces of Eight" total from the corpses as well as contributing to the Trade Run gold total when turning in the Trade Run.
+Skill Check = Detect Hidden [Requires High Seas Expansion], if a player has GM Detect Hidden and uses it on one of the wreckage NPCs,  they find a hidden cache "A Nondescript Ship's Strongbox" (special hued strongbox).
+Unlocking the strong box with GM Lockpicking, the player may find one or more of the following:
+1. (100% chance) 10 to 20 gems
+2. (100% chance) 100 to 200 "Unfamiliar Pieces of Eight"
+3. (50% chance) 1 to 3 Stygian Abyss imbuing resources
+4. (50% chance)  "A Strange and Sodden Artifact" (see below)
+5. (25% chance) A piece of cloth with a special hue (sea greens and blues, similar to slime dyes but new colors)
+6. (10% chance) A random level 4 to a level 7 treasure map
+7. (5% chance) "A Map of a Dread Pirate's Treasure" (see below) [if this item is in the box, removing it immediately spawns a "Drowned Dread Pirate" with the following stats]:
+Creature Name: Drowned Dread Pirate
+Creature Slayer Type: Undead
+Creature Skin: Dread Pirate w/ a greenish tint / color scheme
+Creature Hit Points: 1000 - 2000
+Creature Mana: 500
+Creature Resists:
+Physical = 80 to 85%
+Fire = 50 to 55%
+Cold = 90%
+Poison = 85%
+Energy = 60 to 65%
+
+Creature Special Abilities: Necromancy, Bleed
+Creature Loot: A random item from the SOS loot table
+Skill Check = Item Identification [Requires High Seas Expansion], if a player has GM Item Identification and uses it on one of the "A Strange and Sodden Artifact" the following may happen:
+(50% chance) = "Upon further investigation, the item is a normal {minor artifact OR armor set piece from the list of Named Monster armor sets [e.g. Myrmdon, Assassin, Greymist, etc]}" (the graphic changes to match the item selected).
+(40% chance) = "Upon further investigation, the item is an ancient relic!" (the graphic changes to match the item selected).
+If the Item Id skill check results in "an ancient relic", the player receives an "Antique" version of one of the following artifacts:
+Lieut. of the Britannian Royal Guard (Antique)
+Royal Guard Investigator (Antique)
+Capt. John's Hat (Antique)
+Mystics Garb (Antique)
+Obsidian Hearings (Antique)
+Helm of Vengeance (Antique)
+(10% chance) = "Upon further investigation, the item is from a ship lost at sea!" (the graphic changes to match the item selected).
+If the Item Id skill check results in " a ship lost at sea", the player receives one of the following:
+Seahorse Statuette (with new special color hues)
+"Anchor from a Doomed Ship" (uses the Ghost Ship Anchor graphic but with special new color hues)
+"A Waterstained Portrait of {a random current online player of the shard}" This will be one of the existing SOS paintings, but unique to current player names and with new special hues.
+Item Name: "A Map of a Dread Pirate's Treasure"
+Item Graphic: treasure map, but shaded in 'blood cloth' colors from the invasion cloaks
+Item Use: This item is functionally equivalent to a level 7 treasure map, with the following additions:
+"A Map of a Dread Pirate's Treasure" will always generate at least one of a new tameable creature type in its initial spawn, from the following list:
+Dread Lion
+Dread Tiger
+Dread Spider
+Dread Wolf
+Dread Sabretooth
+New "Dread Tameables" have identical stats to their existing versions EXCEPT:
+- All Dread animals spawn in new hues that range from dark grey through dark green and dark blue;
+- All Dread animals tame at ONE SLOT LOWER than their regular counterparts;
+- All Dread animals have ZERO abilities (blank slate) when tamed.
+Special Random Encounter = Magical Whirpools 
+Players on High Seas boats have a chance of encountering a Magical Whirlpool. The Whirlpool uses the graphic of the Water Titan from the last invasion event. A Whirlpool always spawns with 4 to 5 Strange Sea Monsters, 2 to 3 Abyssal Kraken, and 1 Eldritch Leviathan. These are paragon versions with new hues of their normal counterpart. Defeating these creatures, players will find 200, 500, or 2000 "Unfamiliar Pieces of Eight" on them, respectively. Once they are cleared, the Magical Whirlpool status bar changes from yellow to red, and becomes attackable.
+Creature Name: Magical Whirlpool
+Creature Slayer Type: Elemental
+Creature Skin: Water Titan
+Creature Hit Points: 15000 - 20000
+Creature Mana: 2000
+Creature Resists:
+
+Physical = 90 to 95%
+Fire = 90 to 95%
+Cold = 25%
+Poison = 50%
+Energy = 30 to 45%
+Creature Special Abilities: Magery, Cold Wind, Wither
+Creature Loot: "A Map of a Dread Pirate's Treasure", "A Waterstained Portrait of {a random current online player of the shard}" , 5 to 8 Stygian Abyss imbuing resources, 3000 to 5000 "Unfamiliar Pieces of Eight", random SOS loot
+Also, in this first arc, a new NPC will interact with members of the Thieves Guild. This NPC will be Slim's 'cousin', and will be located in Felucca Buc's Den.
+
+ 
+New NPC Added, Named: "Slim's Cousin, Shifty"
+NPC Location: Felucca Buc's Den
+NPC Behaviour: Three times per day, a player who is a member of the Thieves Guild AND has at least GM Snooping, GM Stealing, GM Forensics, and GM Detect Hidden may drop an in-game stealable on to NPC Shifty. This can include any dungeon stealable (Doom, Wrong, Blackthorn, Abyss) as well as crate stealables from towns (Wire, Fruit, etc). Based on the rarity of the stealable handed to Shifty, the player will receive "A Hot Tip" (uses the BOD graphic but re-colored). These items will have a 30 min. timer on them. During that 30 min. window, the player can use the tip to search for a hidden cache in the area described. Each "A Hot Tip" will provide the following information in its description when the cursor hovers over it:
+"A Hot Tip for a Lucrative Mark in {insert random town name} at the {insert random NPC shop} for the Next {insert remaining minutes} Minutes"
+Skill Check = Detect Hidden, when a player with GM Detect Hidden searches in the area indicated by the "A Hot Tip" document, they will find a "Hidden Cache".
+Skill Check = Forensics, when a player with GM Forensics uses this skill on the"Hidden Cache" they will receive a message indicating the type of trap it may have.
+Skill Check = Remove Trap, when a player with GM Remove Trap uses this skill on the "Hidden Cache" one of two things will happen:
+ If they used Forensics first, as indicated above they will successfully removed the trap without issue at GM Remove Trap.
+If they did not use Forensics first, or if their Forensics skill was less than GM, there is a chance the "Hidden Cache" will be completely destroyed.
+
+ 
+
+Once the trap is removed, the player can attempt to unlock the cache.
+Skill Check = Lockpicking, when a player with GM Lockpicking uses a lock pick or skeleton key on the cache, they will have the same chance of success as a level 7 treasure chest. Failure on a lockpicking attempt can randomly resulting in the destruction of an item (similar to high-level treasure map chests).
+Once opened, the player will find one or more of the following:
+1. (100% chance) 5 to 20 gems (*)
+2. (100% chance) 100 to 500 "Unfamiliar Pieces of Eight" (*)
+3. (50% chance) 1 to 5 Stygian Abyss imbuing resources (*)
+4. (50% chance)  A random splintering weapon (*)
+5. (25% chance) A number of pieces of cloth with a special hue (sea greens and blues, similar to slime dyes but new colors) (*)
+6. (25% chance)  "A Packet of Incriminating Information" (*)
+NOTE (*) All loot in a "Hidden Cache" are determined by the 'intensity' of the stealable item first passed to Shifty to get "A Hot Tip". Thus, turning-in a Navrey spiderweb would create a cache with fewer and lower intensity items than an Inquisitor's Resolution.
+Skill Check = Item Identification, when a player with GM Item Identification uses these skills on "A Packet of Incriminating Information", the item will change to a sheaf of papers (new graphic) that reads in its mouse hover description:
+"These papers incriminate {current Governor name} of {current city name} in a scandalous affair!" If the player double-clicks the papers and targets Slim the Fence, they will lose karma and receive payment of 20,000 gold from that city's treasury. The corresponding city treasury amount will reduce by 20,000 gold.
+However, if the player double-clicks the papers and targets the named Governor (current player-elected city Governor), they receive the message "You reach a discreet agreement with the mayor!" and the papers change into a random 1.0 Scroll of Transcendence.
+If at any time between receiving the "A Hot Tip" and unlocking the "Hidden Cache" the player no longer has GM Snooping, GM Stealing, GM Forensics, and GM Detect Hidden on their character, the "A Hot Tip" is destroyed, and the contents of the cache will disappear.
+END FIRST ARC SECTION
+
+ 
+
+ 
+
+BEGIN SECOND ARC SECTION (SKILLS AFFECTED = SNOOPING, STEALING, COOKING, CARPENTRY, FISHING, CARTOGRAPHY)
+Second Arc Details = Game Design and Skill Changes
+This part begins the 'invasion' portion of the update. Non-High Seas accounts can participate but cannot recieve special drops / rewards. Each Black Armada invasion starts with blue NPC Dock Guards fighting red NPC Black Armada Sailors on the docks and shoreline with Black Armada ships spawning in the nearby waters. All invasion NPCs have the chance to drop "An Item of Murky Origin" turn-in item random drop. Once all Black Armada Captains in a town invasion are defeated, a Black Armada Flagship will spawn carrying a Black Armada Admiral as the "boss" of the current town invasion. Once defeated, all remaining blue and red invasion NPC's disappear and the invasion continues in a new town. The sunken Flagship spawns a 5 minute fishing opportunity for special rewards.
+
+New NPC Added, Named: Dock Guards
+
+NPC Location: Docks in all port towns DURING Black Armada events
+
+NPC Behaviour: These blue NPCs represent the NPC defenders of each port town. They are dressed in various melee attire. These NPCs spawn near the dock area at the same time that Black Armada NPCs spawn. Each time a Black Armada NPC is defeated, a new Dock Guard spawns. Dock Guards automatically enter combat against Black Armada NPCs and Red-designated Player Characters. These NPCs can be interacted with in one of three ways:
+
+First Interaction -> Combat = Players can attack Dock Guards. Dock Guards have the following stats:
+
+Creature Name: Dock Guards
+Creature Slayer Type: Repond
+Creature Skin: Blackthorn Guards in special hued red / black plate armor sets
+Creature Hit Points: 200 - 400
+Creature Mana: 150
+Creature Resists:
+
+Physical = 70 to 75%
+Fire = 70 to 75%
+Cold = 60%
+Poison = 55%
+Energy = 40 to 45%
+
+Creature Special Abilities: Chivalry, Crushing Blow
+Creature Loot: Special hued plate armor pieces, special hued capes / boots, percent chance of event "An Item of Murky Origin" turn-in item random drop
+Killing a Dock Guard lowers Player Loyalty in the respective City SUBSTANTIALLY
+
+ 
+Second Interaction -> Skill Check = Snooping [Requires High Seas Expansion], a player with GM Snooping can use the skill on one of these Dock Guard NPCs.
+60% of the time players are discovered and sent to the town jail for a 60 seconds.
+40% of the time the player will see a message, "The Dock Guard turns his attention elsewhere!" which allows the player to make a stealing attempt against the Dock Guard.
+
+If unsuccessful, the stealing attempt results in the Dock Guard attacking the player with an immediate 50 points of direct damage and aggressing for combat.
+
+If successful, the stealing attempt results in one of the following:
+1. (50% chance) "Guard Rations" re-hued food items that, when consumed, provide a 10 min. boost to HCI, DCI, or HP Regen. Ability stacks with other buffs.
+
+2. (25% chance) "Guard Bolas" re-hued bolas that, when used, provide a 25% improvement to the chance to dismount target
+
+3. (20% chance) "Wanted: Dead or Alive: {insert current online negative karma player name}" This will have a wall poster graphic with a special hue, name taken from a negative karma player active on the shard. Decorative only.
+
+4. (3% chance) "Safe Harbor", a re-hued Order Shield that matches the NPC armor color. Safe Harbor has the following characteristics:
+
+"Safe Harbor" Order Shield
++10% Positive Karma Gain
++20% DCI
++ 3 HPR
++ 5 SSI
+
+ 5. (2% chance) A Night Watchman's Lantern, has Spell Channeling, uses current lantern graphic but comes in a variety of special hues (different from the Ship's Lanterns).
+Third Interaction -> Skill Check = Cooking [Requires High Seas Expansion], a player with GM Cooking can provide food to one of these Dock Guard NPCs by dropping the food on the NPC IF the NPC is damaged.
+The Dock Guard immediately heals 25% of his health and shouts, "Thank you citizen for the rations! I fight again!"
+The player receives a karma boost, and a boost to that city's loyalty. There is a 20% chance that the player will also recieve a "Writ of Succor". When turned in to a City Trade Minister, the "Writ of Succor" DOUBLES trade run treasury gold earned by completed trade runs for THAT city in the next 1 hour.
+
+ 
+New NPC Added, Named One of the Following: Black Armada Sailor, Black Armada Buccaneer, Black Armada Deckhand
+NPC Location: Docks in all port towns DURING Black Armada events, deck of all Black Armada ships
+NPC Behaviour: These red NPCs represent the foot soldiers of the Black Armada. They are dressed in various pirate attire. These NPCs spawn near the dock area at the same time that Dock Guard NPCs spawn. They also spawn on Black Armada ships any time a ship spawns. Each time a Black Armada NPC is defeated during an invasion, a new Dock Guard spawns. Blue Dock Guards and Blue-designated Player Characters automatically enter combat against red Black Armada NPCs. These NPCs can be interacted with in one of three ways:
+First Interaction -> Combat = Players can attack Black Armada Sailors, Black Armada Buccaneers, and Black Armada Deckhands. They have the following stats:
+Creature Name: Black Armada Sailor, Black Armada Buccaneer, Black Armada Deckhand
+Creature Slayer Type: Repond
+Creature Skin: Various NPC pirates
+Creature Hit Points: 1000 - 2000
+Creature Mana: 300
+Creature Resists:
+
+Physical = 70 to 75%
+Fire = 70 to 75%
+Cold = 60%
+Poison = 55%
+Energy = 40 to 45%
+
+Creature Special Abilities: Bleed, Piercing
+Creature Loot: Special hued pirate clothing pieces (tricorne, skullcap, earrings, boots, long pants, doublet, jin-bori), 200 - 300 "Unfamiliar Pieces of Eight", percent chance of event "An Item of Murky Origin" turn-in item random drop
+
+Killing Black Armada Sailors, Black Armada Buccaneers, and Black Armada Deckhands raises Player Loyalty in the respective City similar to donating 500 ingots to a Trade Minister.
+
+ 
+
+Second Interaction -> Skill Check = Snooping [Requires High Seas Expansion], a player with GM Snooping can use the skill on one of these Black Armada Sailor, Black Armada Buccaneer, and Black Armada Deckhand NPCs.
+
+40% of the time players are discovered and sent to the "The Plank", teleporting the player to the nearest Black Armada ship. Once there, the player will be paralyzed for 10 seconds.
+
+60% of the time the player will see a message, "The [Black Armada Sailor, Black Armada Buccaneer, or Black Armada Deckhand] is distracted in the heat of battle!" which allows the player to make a stealing attempt against the him.
+
+If unsuccessful, the stealing attempt results in the Black Armada Sailor, Black Armada Buccaneer, or Black Armada Deckhand and attacking the player with an immediate 50 points of direct damage and aggressing for combat.
+If successful, the stealing attempt results in one of the following:
+1. (50% chance) "Ship Rations" re-hued food items that, when consumed, provide a 10 min. boost to SDI, Mana Regen, or Poison Resist. Ability stacks with other buffs.
+
+2. (25% chance) "Ship Manacles" re-hued old manacle graphic that, when used, allows a Dread Pirate to be captured at 15% health instead of the lower threshold currently in place.
+
+3. (20% chance) "A Hastily Scrawled Map to {insert current online positive karma player name}'s Buried Treasure" This will have a treasure map graphic with a special hue, name taken from a positive karma player active on the shard. Decorative only.
+
+4. (3% chance) "Pirate's Remorse", a re-hued Chaos Shield that matches the NPC clothing color. Pirate's Remorse has the following characteristics:
+
+"Pirate's Remorse" Chaos Shield
++10% Negative Karma Gain
++20% HCI
++ 3 MR
++ 5 SSI
+
+ 
+
+5. (2% chance) A Ship's Lantern, has Spell Channeling, uses current lantern graphic but comes in a variety of special hues.
+
+ Third Interaction -> Skill Check = Cooking [Requires High Seas Expansion], a player with GM Cooking can provide food to one of these Black Armada Sailor, Black Armada Buccaneer, or Black Armada Deckhand NPCs by dropping the food on the NPC IF the NPC is damaged.
+
+The Black Armada Sailor, Black Armada Buccaneer, or Black Armada Deckhand immediately heals 25% of his health and shouts, "Avast matey, I'll wash their innards in the sea! Heave to!"
+
+ The player receives a negative karma boost. There is a 20% chance that the player will also recieve a "Pirate's Shovel" (25 uses). When used to dig a treasure map, the Pirate's Shovel adds 350 luck to the player for 10 minutes.
+New NPC Added, Named: Black Armada Ship
+
+ NPC Location: Nearby ocean at all port towns DURING Black Armada events
+
+ NPC Behaviour: Spawns when the invasion begins, 10 - 12 in number, the ships have the same characteristics as the current Orc ships / Dread Pirate ships except they are painted a black color. Each one spawns with a crew of 5 to 6 Black Armada Sailor, Black Armada Buccaneer, or Black Armada Deckhands. Each one also spawns with a Black Armada Captain. The ships must be scuttled using Cannon before they can be boarded. Once all NPC's are defeated on deck, players can loot the chests on deck (but NOT BEFORE all NPC's are cleared) where they will find Fuses, Matches, Cannonballs, and Powder Charges.
+New NPC Added, Named: Black Armada Captain
+NPC Location: deck of Black Armada ships
+NPC Behaviour: same template as a Dread Pirate
+Creature Name: Black Armada Sailor, Black Armada Buccaneer, Black Armada Deckhand
+
+ Creature Slayer Type: Repond
+
+ Creature Skin: Various NPC pirates
+
+Creature Hit Points: 3000 to 4000
+Creature Mana: 1000
+Creature Resists:
+
+Physical = 60 to 65%
+Fire = 80 to 85%
+Cold = 90%
+Poison = 55%
+Energy = 70 to 75%
+Creature Special Abilities: Bleed, Mortal Wound, Healing
+
+Creature Loot: Special hued pirate clothing pieces (tricorne, skullcap, earrings, boots, long pants, doublet, jin-bori), 1000 - 3000 "Unfamiliar Pieces of Eight", percent chance of event "An Item of Murky Origin" turn-in item random drop (several), chance of lvl 4 to lvl 6 treasure map
+Killing Black Armada Captains raises Player Loyalty in the respective City similar to donating 2000 ingots to a Trade Minister.
+
+ 
+
+New NPC Added, Named: Black Armada in Flagship
+NPC Location: Ocean invasion area
+NPC Behaviour: spawns after all Black Armada Captains are defeated
+Creature Name: Black Armada Flagship
+Creature Skin: Various Britannian Ship model (the BIG one) but in black and red hues / special colors
+The Black Armada Flagship contains 10 - 20 Black Armada Sailors, Black Armada Buccaneers, or Black Armada Deckhands; 2 - 3 Black Armada Captains, and one Black Armada Admiral
+
+ Creature Loot: Once all invasion NPC's are cleared from the deck, the ship will sink in 2 min. Once sunk, the bubble graphic that currently occurs when a net is tossed into the water will appear in the ships location and persist for 5 minutes.
+
+Skill Check = Fishing [Requires High Seas Expansion], a player with GM Fishing or greater can use the skill in the area of the bubble graphic during the 5 min. it appears. A successful attempt will result in one of the following items being fished up:
+
+1. (50% chance) Nothing
+
+2. (30% chance) common High Seas fish
+ 
+3. (5% chance) semi-rare High Seas fish
+
+ 4. (5% chance)  "A Waterstained Portrait of {a random current online player of the shard}" This will be one of the existing SOS paintings, but unique to current player names and with new special hues.
+
+5. (5% chance) "A Strange and Sodden Artifact" (see above)
+ 
+6. (3% chance) "An Item of Murky Origin" turn-in item random drop
+
+7. (2% chance) A "Pattern for a Hooded Robe" crafting recipe. Allows tailors to craft hooded robes (ties in to the special cloth above)
+
+ New NPC Added, Named: Black Armada Admiral
+NPC Location: deck of Black Armada Flagships
+NPC Behaviour: Modeled on Virtuebane, Zipacoatl, Anon, and T-Rex templates (random when spawned)
+Creature Name: Black Armada Admiral
+Creature Slayer Type: None
+Creature Skin: Various NPC pirates
+Creature Hit Points: 40000 to 50000
+Creature Mana: 2000
+Creature Resists:
+
+Physical = 70 to 75%
+Fire = 80 to 85%
+Cold = 90%
+Poison = 80%
+Energy = 70 to 75%
+Creature Special Abilities: Same as the template selected at spawn (see above)
+
+ Creature Loot: Special hued pirate clothing pieces (tricorne, skullcap, earrings, boots, long pants, doublet, jin-bori), 5000 - 10000 "Unfamiliar Pieces of Eight", percent chance of event "An Item of Murky Origin" turn-in item random drop (several), "A Map of a Dread Pirate's Treasure" (see above), forged pardon, 5 to 10 Stygian Abyss imbuing reagents, 5 to 10 Mondain's Legacy special ingredients, 3 to 4 "Ship Rations" (see above)  (rare drop), 1.0 to 3.0 points of random Scroll of Transcendence, 1 to 2 "A Strange and Sodden Artifact" (see above)  (rare drop), Special Ship Paint (rare drop)
+
+ 
+
+Killing Black Armada Admirals raises Player Loyalty in the respective City similar to donating 5000 ingots to a Trade Minister.
+
+New NPC Added, Named: Royal Fleet Officer
+NPC Location: Britain dock
+NPC Behaviour: Modeled on Blackthorn turn-in officer, the Royal Fleet Officer accepts "An Item of Murky Origin" items in exchange for reward items.
+
+
+Players can spend their collected "An Item of Murky Origin" items on the following:
+1. 10 "An Item of Murky Origin" items = Deed for a reward title "Scourge of the High Seas"
+
+ 2. 10 "An Item of Murky Origin" items = Deed for a reward title "Britannian Royal Navy Officer"
+
+3. 10 "An Item of Murky Origin" items = Deed for a reward title "Landlubber Scallywag"
+
+4. 25 "An Item of Murky Origin" items =  Potion of Pet Resolve, a potion that removes all training levels from the targeted pet owned by the player, stats are reduced to the normal range randomly. All pet training options are cleared. Requires High Seas Expansion.
+
+5. 25 "An Item of Murky Origin" items = "The Captain's Spyglass", consumable spyglass that, when used, raises the level of a treasure map by one step (Lvl 6 becomes a Lvl 7). Requires High Seas Expansion.
+
+6. 40 "An Item of Murky Origin" items = Deed for a Ship's Crane house add-on, uses the ship crane graphic from BMV Ararat, can be place like a Lighthouse, usable once per day to transfer the linked ship's hold contents to player bank, space permitting. Requires High Seas Expansion.
+
+7. 40 "An Item of Murky Origin" items = "{Player's Name}'s Night Watchman's Lantern", has Spell Channeling, uses current lantern graphic but comes in a variety of special hues (different from the Ship's Lanterns).
+
+8. 50 "An Item of Murky Origin" items = Boots of Escaping / Talons of Escaping
+
+9. 50 "An Item of Murky Origin" items = Cloak of Light / Wing Armor of Light
+
+10. 75  "An Item of Murky Origin" items =  "Lady Luck's Embrace", a Europa Gold colored sash that has 150 Luck on it. Can be blessed with a CBD (except on Siege ruleset).
+
+11. 75  "An Item of Murky Origin" items =  Deed for a Pirate Flag, works like Vet Reward Banners, place in a house, user selects from an option of designs. Requires High Seas Expansion.
+
+12. 100  "An Item of Murky Origin" items =  "Plans for a Black Armada Ship", consumable item (uses the recipe graphic) that, when used by a GM Carpenter on an Orc Ship, creates a new ship type that looks like an NPC Black Armada Ship, functionally similar to an Orc Ship except Cannon range is doubled, and the NPC crew is a Black Armada crewmen with unique speech. Requires High Seas Expansion.
+
+END SECOND ARC SECTION
+
+ 
+BEGIN THIRD ARC SECTION
+
+Third Arc Details = Game Design and Skill Changes
+
+This arc represents the permanent changes left in game after the invasion event. The Black Armada will permanently be based in Fel Buc's Den. At least one Black Armada Ship will always be found in the waters around the island, and "An Item of Murky Origin" will still drop from Black Armada Captains. Black Armada Ships will also randomly spawn in oceans throughout the land.
+
+Suspicious Sailor, Swarthy Deckhand, and Aloof Seaman will randomly spawn near city docks.
+
+Flotsam and Jetsam of a Wrecked Ship can still be detected as long as the player is on a trade run AND near a shoreline.
+
+Both the Questionable Dealer and Shifty, Slim's cousin NPCs will remain in Fel Buc's Den.
+
+The Royal Fleet Officer will still accept "An Item of Murky Origin" items at the Brit Dock.
+
+Dock Guards will spawn near Feluccan docks, but not in Buc's Den.
+
+END THIRD ARC SECTION
+
+ 
+Miscellaneous High Seas Changes / Bug Fixes:
+
+ Scuttled Merchant and Pirate ship deck chests now include Frostwood
+
+Once scuttled, items in chests on deck do not decay until the ship decays (currently there is an issue with some items decaying almost immediately).
+
+ Corpses of Dread Pirates allow you to remove ALL ITEMS (currently pieces of NPC armor cannot be taken out, which results in the items being 'hidden' under them in the Classic Client).
+
+ Cannon context menu allows player to 'autoload' by double-clicking the cannon. The cannon animations still occur (cleaning, loading, priming) and take the same time, but the player only has to double click the cannon once for all actions to occur.
+
+ The Fisherman's Suit set provides a 30% bonus to fishing (as opposed to the seemingly 0.5% chance it currently provides).
+
+ Special fishing bait provides an additional 10% bonus to its current value.
+
+ Grizzled Mare can now be trained to 5 slots.
+
+ Siege Bless option can now be used on lanterns on Siege Perilous shard.
+
+ A Hooded Robe / Epaulettes version of Hwakwind's Robe has been added to the Blackthorn Dungeon Turn-In system for 100 points.
+
+ Disguise kits from the Thieves Guild can now be properly removed before the 3 day timer.
