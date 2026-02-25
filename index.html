@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UO Forum Archive</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d0d1a;color:#d0d0d8;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6}
+a{color:#7db8f0;text-decoration:none}a:hover{text-decoration:underline}
+.hdr{background:linear-gradient(135deg,#1a1a3e,#0d0d1a);border-bottom:2px solid #c4a35a;padding:20px;text-align:center}
+.hdr h1{color:#c4a35a;font-size:28px;font-weight:400;letter-spacing:2px}
+.hdr .sub{color:#808090;font-size:14px;margin-top:4px}
+.ctl{max-width:1000px;margin:20px auto;padding:0 20px;display:flex;gap:12px;flex-wrap:wrap}
+.ctl input,.ctl select{background:#1a1a2e;border:1px solid #2a2a4e;color:#d0d0d8;padding:10px 14px;border-radius:6px;font-size:14px}
+.ctl input{flex:1;min-width:200px}.ctl select{min-width:180px}
+.ctl input:focus,.ctl select:focus{outline:none;border-color:#c4a35a}
+.tl{max-width:1000px;margin:0 auto;padding:0 20px 40px}
+.ti{background:#16213e;border:1px solid #1e2a4a;border-radius:8px;padding:16px 20px;margin-bottom:8px;cursor:pointer;transition:border-color .2s,background .2s;display:flex;justify-content:space-between;align-items:center}
+.ti:hover{border-color:#c4a35a;background:#1a2848}
+.tt{font-size:16px;color:#e0e0e8;font-weight:500}
+.tm{font-size:12px;color:#707088;margin-top:4px}.tm span{margin-right:16px}
+.tp{background:#0d0d1a;color:#c4a35a;padding:4px 12px;border-radius:12px;font-size:13px;white-space:nowrap}
+.tv{max-width:900px;margin:0 auto;padding:0 20px 40px}
+.bb{display:inline-flex;align-items:center;gap:6px;background:#16213e;border:1px solid #2a2a4e;color:#c4a35a;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:14px;margin-bottom:16px;transition:background .2s}
+.bb:hover{background:#1e2a4a;text-decoration:none}
+.tvh{font-size:24px;color:#c4a35a;margin-bottom:4px}
+.tvc{color:#707088;font-size:14px;margin-bottom:24px}
+.post{background:#16213e;border:1px solid #1e2a4a;border-radius:8px;margin-bottom:12px;overflow:hidden}
+.post.op{border-left:3px solid #c4a35a}
+.ph{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#12192e;border-bottom:1px solid #1e2a4a}
+.pa{width:40px;height:40px;border-radius:50%;object-fit:cover;background:#0d0d1a}
+.pan{font-weight:600;color:#e0e0e8}
+.pad{font-size:12px;color:#606078}
+.pb{padding:16px;font-size:15px;line-height:1.7;word-wrap:break-word;overflow-wrap:break-word}
+.pb img{max-width:100%;height:auto;border-radius:4px;margin:8px 0}
+.pb blockquote,.pb .Quote{background:#0d0d1a;border-left:3px solid #c4a35a;padding:12px 16px;margin:8px 0;border-radius:0 6px 6px 0}
+.pb .QuoteAuthor{color:#c4a35a;font-size:13px;margin-bottom:4px}
+.ps{padding:8px 16px;border-top:1px solid #1e2a4a;font-size:12px;color:#505068;font-style:italic}
+.st{max-width:1000px;margin:0 auto;padding:0 20px;font-size:13px;color:#505068;margin-bottom:12px}
+.ld{text-align:center;padding:60px;color:#505068;font-size:18px}
+.nr{text-align:center;padding:40px;color:#505068}
+.lb{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.92);z-index:1000;cursor:pointer;justify-content:center;align-items:center}
+.lb.on{display:flex}.lb img{max-width:95%;max-height:95%;object-fit:contain}
+</style>
+</head>
+<body>
+<div class="hdr">
+<h1>&#9876; Ultima Online Forum Archive &#9876;</h1>
+<div class="sub">A complete archive of forum.uo.com discussions</div>
+</div>
+<div id="app"><div class="ld">Loading archive&hellip;</div></div>
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img id="lbi" src=""></div>
+<script src="alldata_1.js"></script>
+<script src="alldata_2.js"></script>
+<script>
+if(typeof ALL_THREADS_1==='undefined'||typeof ALL_THREADS_2==='undefined'){document.getElementById('app').innerHTML='<div class="ld">alldata files not found.<br><br>Run the scraper first, then open index.html.</div>';}
+else{
+const ALL_THREADS=ALL_THREADS_1.concat(ALL_THREADS_2);
+const DB={};ALL_THREADS.forEach(t=>{DB[t.discussionId]=t});
+const M=ALL_THREADS.map(t=>({id:t.discussionId,title:t.title,category:t.category,author:t.opAuthor||'',date:t.opDate||'',postCount:t.postCount}));
+M.sort((a,b)=>b.id-a.id);
+showList(M);
+function showList(list){
+ const cats=[...new Set(M.map(t=>t.category))].sort();
+ let h='<div class="ctl">';
+ h+='<input id="q" placeholder="Search threads\u2026" oninput="fil()">';
+ h+='<select id="cf" onchange="fil()"><option value="">All Categories</option>';
+ cats.forEach(c=>{h+='<option value="'+esc(c)+'">'+esc(c)+'</option>'});
+ h+='</select></div>';
+ h+='<div class="st" id="st">'+list.length+' threads archived</div>';
+ h+='<div class="tl" id="tc">'+items(list)+'</div>';
+ document.getElementById('app').innerHTML=h;
+ window.showList=showList;window.fil=fil;window.vt=vt;
+}
+function items(list){
+ if(!list.length)return'<div class="nr">No threads match.</div>';
+ let h='';
+ list.forEach(t=>{
+  h+='<div class="ti" onclick="vt('+t.id+')">';
+  h+='<div><div class="tt">'+esc(t.title)+'</div>';
+  h+='<div class="tm"><span>by '+esc(t.author)+'</span><span>'+esc(t.category)+'</span><span>'+esc(t.date)+'</span></div></div>';
+  h+='<div class="tp">'+t.postCount+' posts</div></div>';
+ });
+ return h;
+}
+function fil(){
+ const q=document.getElementById('q').value.toLowerCase(),c=document.getElementById('cf').value;
+ const f=M.filter(t=>{if(c&&t.category!==c)return false;if(q&&!t.title.toLowerCase().includes(q)&&!t.author.toLowerCase().includes(q))return false;return true});
+ document.getElementById('tc').innerHTML=items(f);
+ document.getElementById('st').textContent=f.length+' of '+M.length+' threads';
+}
+function vt(id){
+ const t=DB[id];
+ if(!t){document.getElementById('app').innerHTML='<div class="ld">Thread '+id+' not found</div>';return}
+ showThread(t);
+}
+function showThread(t){
+ let h='<div class="tv">';
+ h+='<a class="bb" onclick="showList(M)">&larr; Back</a>';
+ h+='<h2 class="tvh">'+esc(t.title)+'</h2>';
+ h+='<div class="tvc">'+esc(t.category)+' &middot; '+t.postCount+' posts</div>';
+ t.posts.forEach(p=>{
+  const av=loc(p.avatarUrl),msg=locAll(p.messageHtml||'');
+  h+='<div class="post'+(p.isOriginalPost?' op':'')+'">';
+  h+='<div class="ph"><img class="pa" src="'+av+'" onerror="this.style.display=\'none\'">';
+  h+='<div><div class="pan">'+esc(p.author)+'</div><div class="pad">'+esc(p.datetime||p.displayDate)+'</div></div></div>';
+  h+='<div class="pb">'+msg+'</div>';
+  if(p.signature)h+='<div class="ps">'+esc(p.signature)+'</div>';
+  h+='</div>';
+ });
+ h+='</div>';
+ document.getElementById('app').innerHTML=h;
+ document.querySelectorAll('.pb img').forEach(i=>{i.style.cursor='pointer';i.onclick=()=>{document.getElementById('lbi').src=i.src;document.getElementById('lb').classList.add('on')}});
+ window.scrollTo(0,0);
+}
+function locAll(html){
+ return html.replace(/src="([^"]+)"/g,(_,u)=>{const f=u.split('/').pop().split('?')[0];return'src="images/'+f+'"'});
+}
+function loc(u){if(!u)return'';const f=u.split('/').pop().split('?')[0];return'images/'+f}
+function esc(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+}
+</script>
+</body>
+</html>
