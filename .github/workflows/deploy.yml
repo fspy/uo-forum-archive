@@ -3,6 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'README.md'
+      - 'AGENTS.md'
+      - 'LICENSE'
+      - '.beads/**'
+      - '.claude/**'
   workflow_dispatch:
 
 permissions:
