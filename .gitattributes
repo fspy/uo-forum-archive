@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+alldata_1.js filter=lfs diff=lfs merge=lfs -text
+alldata_2.js filter=lfs diff=lfs merge=lfs -text

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import ThreadListItem from '$lib/components/ThreadListItem.svelte';
 	import ThreadCard from '$lib/components/ThreadCard.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
@@ -13,7 +14,7 @@
 </svelte:head>
 
 <div class="breadcrumb">
-	<a href="/">Home</a>
+	<a href="{base}/">Home</a>
 	<span class="sep">/</span>
 	<span class="current">{data.category.name}</span>
 </div>
@@ -59,7 +60,7 @@
 <Pagination
 	currentPage={data.currentPage}
 	totalPages={data.totalPages}
-	baseUrl="/category/{data.category.slug}"
+	baseUrl="{base}/category/{data.category.slug}"
 />
 
 <style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import categories from '$lib/data/categories.json';
@@ -18,7 +19,7 @@
 	function navigate() {
 		const trimmed = query.trim();
 		if (trimmed) {
-			let url = `/search?q=${encodeURIComponent(trimmed)}`;
+			let url = `${base}/search?q=${encodeURIComponent(trimmed)}`;
 			if (category) {
 				url += `&category=${encodeURIComponent(category)}`;
 			}

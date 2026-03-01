@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { ThreadIndex } from '$lib/types';
 
 	let { thread }: { thread: ThreadIndex } = $props();
 </script>
 
-<a href="/thread/{thread.id}/{thread.slug}" class="item">
+<a href="{base}/thread/{thread.id}/{thread.slug}" class="item">
 	<div class="left">
 		<div class="title">{thread.title}</div>
 		<div class="meta">

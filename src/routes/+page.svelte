@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	let { data } = $props();
 </script>
 
@@ -11,7 +13,7 @@
 		<div class="forum-row">
 			<div class="forum-main">
 				{#if group.children.length === 1}
-					<a href="/category/{group.children[0].slug}" class="forum-name linked">{group.name}</a>
+					<a href="{base}/category/{group.children[0].slug}" class="forum-name linked">{group.name}</a>
 				{:else}
 					<span class="forum-name">{group.name}</span>
 				{/if}
@@ -20,7 +22,7 @@
 					<div class="forum-children">
 						{#each group.children as child, i}
 							{#if i > 0}<span class="child-sep">&middot;</span>{/if}
-							<a href="/category/{child.slug}" class="child-link">{child.name}</a>
+							<a href="{base}/category/{child.slug}" class="child-link">{child.name}</a>
 						{/each}
 					</div>
 				{/if}

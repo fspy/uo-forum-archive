@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { ThreadIndex } from '$lib/types';
 
 	let { thread }: { thread: ThreadIndex } = $props();
@@ -11,11 +12,11 @@
 	}
 </script>
 
-<a href="/thread/{thread.id}/{thread.slug}" class="card">
+<a href="{base}/thread/{thread.id}/{thread.slug}" class="card">
 	<div class="thumb">
 		{#if thread.thumb}
 			<img
-				src="/{thread.thumb}"
+				src="{base}/{thread.thumb}"
 				alt=""
 				loading="lazy"
 				onerror={handleImgError}

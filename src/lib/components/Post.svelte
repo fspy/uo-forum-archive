@@ -1,10 +1,27 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { Post } from '$lib/types';
 
 	let { post }: { post: Post } = $props();
 
 	let showLightbox = $state(false);
 	let lightboxSrc = $state('');
+
+	// Rewrite /images/ paths in the raw HTML to include the base path.
+	// This is necessary because messageHtml is baked at extraction time
+	// with absolute /images/ paths that don't account for subpath deployment.
+	let messageHtml = $derived(
+		base
+			? post.messageHtml.replace(/src="\/images\//g, `src="${base}/images/`)
+			: post.messageHtml
+	);
+
+	// Same treatment for avatar URLs
+	let avatarUrl = $derived(
+		base && post.avatarUrl
+			? post.avatarUrl.replace(/^\/images\//, `${base}/images/`)
+			: post.avatarUrl
+	);
 
 	function openLightbox(src: string) {
 		lightboxSrc = src;
@@ -29,10 +46,10 @@
 
 <article class="post {post.isOriginalPost ? 'op' : ''}">
 	<div class="post-header">
-		{#if post.avatarUrl}
+		{#if avatarUrl}
 			<img
 				class="avatar"
-				src={post.avatarUrl}
+				src={avatarUrl}
 				alt="{post.author}'s avatar"
 				onerror={handleAvatarError}
 			/>
@@ -46,7 +63,7 @@
 	</div>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	<div class="post-body" role="presentation" onclick={handleImgClick}>
-		{@html post.messageHtml}
+		{@html messageHtml}
 	</div>
 	{#if post.signature}
 		<div class="signature" data-pagefind-ignore>{post.signature}</div>

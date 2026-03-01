@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import Post from "$lib/components/Post.svelte";
 
   let { data } = $props();
@@ -16,9 +17,9 @@
 </svelte:head>
 
 <div class="breadcrumb">
-  <a href="/">Home</a>
+  <a href="{base}/">Home</a>
   <span class="sep">/</span>
-  <a href="/category/{categorySlug}">{data.thread.category}</a>
+  <a href="{base}/category/{categorySlug}">{data.thread.category}</a>
   <span class="sep">/</span>
   <span class="current">Thread #{data.thread.discussionId}</span>
 </div>
@@ -37,7 +38,7 @@
   <span hidden data-pagefind-meta="date:{data.thread.opDate || ''}"></span>
   <span hidden data-pagefind-meta="category:{data.thread.category}"></span>
   <div class="thread-meta" data-pagefind-ignore>
-    <a href="/category/{categorySlug}" class="meta-cat"
+    <a href="{base}/category/{categorySlug}" class="meta-cat"
       >{data.thread.category}</a
     >
     <span class="meta-sep">&middot;</span>
@@ -58,7 +59,7 @@
 </div>
 
 <div class="back-nav">
-  <a href="/category/{categorySlug}" class="back-link"
+  <a href="{base}/category/{categorySlug}" class="back-link"
     >&larr; Back to {data.thread.category}</a
   >
 </div>

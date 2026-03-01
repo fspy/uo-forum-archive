@@ -1,19 +1,20 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import { base } from '$app/paths';
+
 	import SearchBar from '$lib/components/SearchBar.svelte';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href="{base}/favicon.ico" type="image/x-icon" />
 </svelte:head>
 
 <div class="app">
 	<header class="header">
 		<div class="header-inner">
-			<a href="/" class="brand">
+			<a href="{base}/" class="brand">
 				<h1 class="title">⚔ Ultima Online Forum Archive ⚔</h1>
 				<p class="subtitle">A complete archive of forum.uo.com discussions</p>
 			</a>

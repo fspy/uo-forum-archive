@@ -1,4 +1,5 @@
 import type { ThreadIndex, Category, CategoryGroup, Thread } from '$lib/types';
+import { slugify } from '$lib/utils';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
@@ -40,12 +41,7 @@ export function getThread(id: number): Thread {
 	return JSON.parse(raw) as Thread;
 }
 
-export function slugify(text: string): string {
-	return text
-		.toLowerCase()
-		.replace(/[^a-z0-9]+/g, '-')
-		.replace(/^-|-$/g, '');
-}
+export { slugify };
 
 export const THREADS_PER_PAGE = 60;
 

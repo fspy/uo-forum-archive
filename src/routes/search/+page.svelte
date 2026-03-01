@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import { page } from "$app/state";
 
   interface SearchResultData {
@@ -52,7 +53,7 @@
       if (!pagefindInstance) {
         // Use a variable so Vite/Rollup won't try to resolve this at build time.
         // Pagefind generates this file into the build output as a post-build step.
-        const pagefindPath = "/pagefind/pagefind.js";
+        const pagefindPath = `${base}/pagefind/pagefind.js`;
         pagefindInstance = await import(/* @vite-ignore */ pagefindPath);
         await pagefindInstance.init();
       }
@@ -96,7 +97,7 @@
 </svelte:head>
 
 <div class="breadcrumb">
-  <a href="/">Home</a>
+  <a href="{base}/">Home</a>
   <span class="sep">/</span>
   <span class="current">Search</span>
 </div>
