@@ -21,8 +21,6 @@ jobs:
       BASE_PATH: '/${{ github.event.repository.name }}'
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
 
       - uses: oven-sh/setup-bun@v2
 
