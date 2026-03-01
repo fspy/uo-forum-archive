@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+	--bg-primary: #121212;
+	--bg-secondary: #1e1e1e;
+	--bg-tertiary: #181818;
+	--bg-hover: #2a2a2a;
+	--border: #2e2e2e;
+	--border-hover: #6b9e78;
+	--accent: #7daa8c;
+	--accent-dim: #5c8a6a;
+	--text-primary: #e0e0e0;
+	--text-secondary: #c0c0c0;
+	--text-muted: #808080;
+	--text-dimmed: #585858;
+	--link: #8bbf9a;
+	--max-width: 1100px;
+	--radius: 8px;
+	--radius-sm: 6px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--bg-primary);
+	color: var(--text-secondary);
+	font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: var(--link);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+::selection {
+	background: var(--accent);
+	color: var(--bg-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--border);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--accent-dim);
+}
